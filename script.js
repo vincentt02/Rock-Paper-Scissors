@@ -12,52 +12,65 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() == "rock") {
     if (computerSelection.toLowerCase() == "scissors") {
-      return "You Win! Rock beats Scissors";
+      return 1;
     } else if (computerSelection.toLowerCase() == "paper") {
-      return "You Lose! Paper beats Rock";
+      return -1;
     } else if (computerSelection.toLowerCase() == "rock") {
-      return "Tie";
+      return 0;
     }
   }
 
   if (playerSelection.toLowerCase() == "paper") {
     if (computerSelection.toLowerCase() == "scissors") {
-      return "You Lose! Scissors beats Paper";
+      return -1;
     } else if (computerSelection.toLowerCase() == "paper") {
-      return "Tie";
+      return 0;
     } else if (computerSelection.toLowerCase() == "rock") {
-      return "You Win! Paper beats Rock";
+      return 1;
     }
   }
 
   if (playerSelection.toLowerCase() == "scissors") {
     if (computerSelection.toLowerCase() == "scissors") {
-      return "Tie";
+      return 0;
     } else if (computerSelection.toLowerCase() == "paper") {
-      return "You Win! Scissors beats Paper";
+      return 1;
     } else if (computerSelection.toLowerCase() == "rock") {
-      return "You Lose! Rock beats Scissors";
+      return -1;
     }
   }
 }
 
-const playerSelection = "Rock";
-const computerSelection = computerPlay();
+function uppercaseFirstLetter(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
 
-console.log(playerSelection);
-console.log(computerSelection);
-
-console.log(playRound(playerSelection, computerSelection));
-
-/*
 function game() {
   let scorePlayer = 0;
   let scoreComputer = 0;
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt();
+    playerSelection = uppercaseFirstLetter(playerSelection);
     let computerSelection = computerPlay();
+    let result = playRound(playerSelection, computerSelection);
+
+    if (result == 1) {
+      scorePlayer++;
+      console.log(
+        "You Win! " + playerSelection + " beats " + computerSelection
+      );
+      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
+    } else if (result == -1) {
+      scoreComputer++;
+      console.log(
+        "You Lose! " + computerSelection + " beats " + playerSelection
+      );
+      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
+    } else if (result == 0) {
+      console.log("Tie!");
+      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
+    }
   }
 }
 
 game();
-*/
