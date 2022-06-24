@@ -1,0 +1,69 @@
+.game {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    font-family:'Staatliches', cursive;
+
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.labels {
+    margin-top: 5vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    font-size:5vh;
+    
+    
+}
+
+#playerLabel{
+    padding-left: 2vw;
+}
+.scoreContainer {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+    height: 20vh;
+    font-size:20vh;
+   
+}
+
+#result {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 100%;
+    font-size: 5vh;
+    
+}
+
+
+.choices {
+    display: flex;
+    width: 75vw;
+    height: 30vh;
+    justify-content: space-between;    
+
+}
+
+button, #rock, #paper, #scissors {
+    height: auto;
+    width: 25%;
+    
+}
+
+.choicesPictures {
+    max-height: 100%;
+    max-width: 100%;
+}

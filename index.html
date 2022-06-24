@@ -4,8 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./script.js"></script>
+    <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="game">
+      <div class="top">
+        <div class="labels">
+          <div id="playerLabel">Player</div>
+          <div id="computerLabel">Computer</div>
+        </div>
+        <div class="scoreContainer">
+          <div id="scorePlayer">0</div>
+          <div id="scoreComputer">0</div>
+        </div>
+      </div>
+
+      <div id="result"></div>
+
+      <div class="choices">
+        <button id="rock" class="selection">
+          <img class="choicesPictures" src="./images/rock.png" alt="rock" />
+        </button>
+        <button id="paper" class="selection">
+          <img class="choicesPictures" src="./images/paper.png" alt="paper" />
+        </button>
+        <button id="scissors" class="selection">
+          <img
+            class="choicesPictures"
+            src="./images/scissors.png"
+            alt="scissors"
+          />
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
 </html>
