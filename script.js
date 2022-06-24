@@ -6,6 +6,9 @@ const resultDiv = document.getElementById("result");
 const scorePlayerDiv = document.getElementById("scorePlayer");
 const scoreComputerDiv = document.getElementById("scoreComputer");
 
+const gameWindow = document.getElementById("game");
+const actionWindow = document.getElementById("action");
+
 rock.addEventListener("click", () => {
   playRound("Rock", computerPlay());
 });
@@ -31,8 +34,17 @@ function computerPlay() {
 let scorePlayer = 0;
 let scoreComputer = 0;
 
+function unBlurAndHide() {
+  game.removeAttribute("class", "blur");
+  actionWindow.style.display = "none";
+}
+
 function playRound(playerSelection, computerSelection) {
   let result = 0;
+  game.setAttribute("class", "blur");
+  actionWindow.style.display = "block";
+  setTimeout(unBlurAndHide, 5000);
+
   if (playerSelection.toLowerCase() == "rock") {
     if (computerSelection.toLowerCase() == "scissors") {
       scorePlayer++;
