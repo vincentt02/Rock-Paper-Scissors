@@ -57,6 +57,7 @@ function unBlurAndHide() {
   game.removeAttribute("class", "blur");
   actionWindow.style.display = "none";
   resultDiv.innerHTML = "";
+  //renable the player buttons
   rockBtn.disabled = false;
   paperBtn.disabled = false;
   scissorsBtn.disabled = false;
@@ -103,9 +104,12 @@ function newGame() {
 }
 
 async function action(playerSelection, computerSelection) {
+  //disable the buttons so that the player can't click them while the action window plays
   rockBtn.disabled = true;
   paperBtn.disabled = true;
   scissorsBtn.disabled = true;
+
+  //set displayed images to corresponding choice
   if (playerSelection == "Rock") {
     playerImg.setAttribute("src", "./images/rock_flipped.png");
   } else if (playerSelection == "Paper") {
@@ -124,7 +128,7 @@ async function action(playerSelection, computerSelection) {
   game.setAttribute("class", "blur");
   actionWindow.style.display = "flex";
 
-  await delay(500);
+  await delay(500); //.5 second delay before showing the result message
   if (playerSelection.toLowerCase() == "rock") {
     if (computerSelection.toLowerCase() == "scissors") {
       updateScoreAndResult(
@@ -173,6 +177,7 @@ async function action(playerSelection, computerSelection) {
     }
   }
 
+  //unBlur and Hide the action window as well as update the scores after 1 second
   setTimeout(unBlurAndHide, 1000);
   setTimeout(updateScore, 1000);
 }
