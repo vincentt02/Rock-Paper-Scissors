@@ -14,7 +14,39 @@
     />
   </head>
   <body>
-    <div class="game">
+    <div id="gameEnd">
+      <div id="endTitle">End Score</div>
+      <div id="endLabels">
+        <div id="playerLabel">Player</div>
+        <div id="computerLabel">Computer</div>
+      </div>
+      <div id="endScore">
+        <div id="playerEndScore"></div>
+        <div id="computerEndScore"></div>
+      </div>
+      <div id="gameEndMessage">game ended</div>
+      <div id="question">Do you want to play again?</div>
+      <div id="playAgainButtons">
+        <button id="playAgain1">Yes</button>
+        <button id="playAgain2">Yes</button>
+      </div>
+    </div>
+    <div id="action">
+      <div id="actionLabels">
+        <div id="playerChoiceLabel">You pick</div>
+        <div id="computerChoiceLabel">Computer picks</div>
+      </div>
+      <div id="result"></div>
+      <div id="playerChoiceImages">
+        <div id="playerSelection">
+          <img id="playerSelectionImg" src="" alt="Player's Selection" />
+        </div>
+        <div id="computerSelection">
+          <img id="computerSelectionImg" src="" alt="Computer's Selection" />
+        </div>
+      </div>
+    </div>
+    <div id="game">
       <div class="top">
         <div class="labels">
           <div id="playerLabel">Player</div>
@@ -25,21 +57,18 @@
           <div id="scoreComputer">0</div>
         </div>
       </div>
-
-      <div id="result"></div>
-
       <div class="choices">
         <button id="rock" class="selection">
-          <img class="choicesPictures" src="./images/rock.png" alt="rock" />
+          <img class="choicesPictures" src="./images/rock.png" alt="Rock" />
         </button>
         <button id="paper" class="selection">
-          <img class="choicesPictures" src="./images/paper.png" alt="paper" />
+          <img class="choicesPictures" src="./images/paper.png" alt="Paper" />
         </button>
         <button id="scissors" class="selection">
           <img
             class="choicesPictures"
             src="./images/scissors.png"
-            alt="scissors"
+            alt="Scissors"
           />
         </button>
       </div>
