@@ -21,13 +21,13 @@ const computerImg = document.getElementById("computerSelectionImg");
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 rockBtn.addEventListener("click", () => {
-  playRound("Rock", computerPlay());
+  action("Rock", computerPlay());
 });
 paperBtn.addEventListener("click", () => {
-  playRound("Paper", computerPlay());
+  action("Paper", computerPlay());
 });
 scissorsBtn.addEventListener("click", () => {
-  playRound("Scissors", computerPlay());
+  action("Scissors", computerPlay());
 });
 
 playAgainBtn1.addEventListener("click", () => {
@@ -177,51 +177,4 @@ async function action(playerSelection, computerSelection) {
   setTimeout(updateScore, 1000);
 }
 
-function playRound(playerSelection, computerSelection) {
-  let result = 0;
-  action(playerSelection, computerSelection);
-
-  /*
-  if (playerSelection.toLowerCase() == "rock") {
-    if (computerSelection.toLowerCase() == "scissors") {
-      scorePlayer++;
-      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
-    } else if (computerSelection.toLowerCase() == "paper") {
-      scoreComputer++;
-      resultDiv.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection.toLowerCase() == "rock") {
-      resultDiv.innerHTML = `Tie!`;
-    }
-  }
-
-  if (playerSelection.toLowerCase() == "paper") {
-    if (computerSelection.toLowerCase() == "rock") {
-      scorePlayer++;
-      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
-    } else if (computerSelection.toLowerCase() == "scissors") {
-      scoreComputer++;
-      resultDiv.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection.toLowerCase() == "paper") {
-      resultDiv.innerHTML = `Tie!`;
-    }
-  }
-
-  if (playerSelection.toLowerCase() == "scissors") {
-    if (computerSelection.toLowerCase() == "paper") {
-      scorePlayer++;
-      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
-    } else if (computerSelection.toLowerCase() == "rock") {
-      scoreComputer++;
-      resultDiv.innerHTML = `You Lose! ${computerSelection} beats ${playerSelection}`;
-    } else if (computerSelection.toLowerCase() == "scissors") {
-      resultDiv.innerHTML = `Tie!`;
-    }
-  }
-  
-
-  scorePlayerDiv.innerHTML = scorePlayer;
-  scoreComputerDiv.innerHTML = scoreComputer;
-
-
-  */
-}
+//by Vincent Tran
