@@ -52,7 +52,7 @@
     font-size:20vh;
 }
 
-#playAgain {
+#playAgain1, #playAgain2 {
     display: flex;
     align-items: center;
     justify-content: center;
