@@ -1,76 +1,80 @@
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+const resultDiv = document.getElementById("result");
+const scorePlayerDiv = document.getElementById("scorePlayer");
+const scoreComputerDiv = document.getElementById("scoreComputer");
+
+rock.addEventListener("click", () => {
+  playRound("Rock", computerPlay());
+});
+paper.addEventListener("click", () => {
+  playRound("Paper", computerPlay());
+});
+scissors.addEventListener("click", () => {
+  playRound("Scissors", computerPlay());
+});
+
 function computerPlay() {
   let choice = Math.floor(Math.random() * 3);
-  if (choice == 0) {
-    return "Rock";
-  } else if (choice == 1) {
-    return "Paper";
-  } else if (choice == 2) {
-    return "Scissors";
+  switch (choice) {
+    case 0:
+      return "Rock";
+    case 1:
+      return "Paper";
+    case 2:
+      return "Scissors";
   }
 }
 
+let scorePlayer = 0;
+let scoreComputer = 0;
+
 function playRound(playerSelection, computerSelection) {
+  let result = 0;
   if (playerSelection.toLowerCase() == "rock") {
     if (computerSelection.toLowerCase() == "scissors") {
-      return 1;
+      scorePlayer++;
+      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
     } else if (computerSelection.toLowerCase() == "paper") {
-      return -1;
+      scoreComputer++;
+      resultDiv.innerHTML = `You Lose! ${playerSelection} beats ${computerSelection}`;
     } else if (computerSelection.toLowerCase() == "rock") {
-      return 0;
+      resultDiv.innerHTML = `Tie!`;
     }
   }
 
   if (playerSelection.toLowerCase() == "paper") {
-    if (computerSelection.toLowerCase() == "scissors") {
-      return -1;
+    if (computerSelection.toLowerCase() == "rock") {
+      scorePlayer++;
+      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
+    } else if (computerSelection.toLowerCase() == "scissors") {
+      scoreComputer++;
+      resultDiv.innerHTML = `You Lose! ${playerSelection} beats ${computerSelection}`;
     } else if (computerSelection.toLowerCase() == "paper") {
-      return 0;
-    } else if (computerSelection.toLowerCase() == "rock") {
-      return 1;
+      resultDiv.innerHTML = `Tie!`;
     }
   }
 
   if (playerSelection.toLowerCase() == "scissors") {
-    if (computerSelection.toLowerCase() == "scissors") {
-      return 0;
-    } else if (computerSelection.toLowerCase() == "paper") {
-      return 1;
-    } else if (computerSelection.toLowerCase() == "rock") {
-      return -1;
-    }
-  }
-}
-
-function uppercaseFirstLetter(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
-
-function game() {
-  let scorePlayer = 0;
-  let scoreComputer = 0;
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt();
-    playerSelection = uppercaseFirstLetter(playerSelection);
-    let computerSelection = computerPlay();
-    let result = playRound(playerSelection, computerSelection);
-
-    if (result == 1) {
+    if (computerSelection.toLowerCase() == "paper") {
       scorePlayer++;
-      console.log(
-        "You Win! " + playerSelection + " beats " + computerSelection
-      );
-      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
-    } else if (result == -1) {
+      resultDiv.innerHTML = `You Win! ${playerSelection} beats ${computerSelection}`;
+    } else if (computerSelection.toLowerCase() == "rock") {
       scoreComputer++;
-      console.log(
-        "You Lose! " + computerSelection + " beats " + playerSelection
-      );
-      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
-    } else if (result == 0) {
-      console.log("Tie!");
-      console.log("Player: " + scorePlayer + " Computer: " + scoreComputer);
+      resultDiv.innerHTML = `You Lose! ${playerSelection} beats ${computerSelection}`;
+    } else if (computerSelection.toLowerCase() == "scissors") {
+      resultDiv.innerHTML = `Tie!`;
     }
   }
-}
 
-game();
+  scorePlayerDiv.innerHTML = scorePlayer;
+  scoreComputerDiv.innerHTML = scoreComputer;
+
+  if (scorePlayer >= 5) {
+    resultDiv.innerHTML = `You Won!`;
+  } else if (scoreComputer >= 5) {
+    resultDiv.innerHTML = `You Lost!`;
+  }
+}
