@@ -1,3 +1,7 @@
+* {
+    font-family:'Staatliches', cursive;
+}
+
 .blur   {
     filter: blur(5px);
     -webkit-filter: blur(5px);
@@ -6,19 +10,126 @@
     -ms-filter: blur(5px);
 }
 
+#gameEnd {
+    background-color: white;
+    display:none;
+    position: absolute;
+    z-index:999;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+#endTitle{
+    margin-top: 5vh;;
+    display: flex;
+    width: 65vw;
+    height: 7vh;
+    font-size: 7vh;
+    align-items: center;
+    justify-content: center;
+
+}
+#endLabels{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    font-size:10vh;
+}
+
+#endLabels #playerLabel {
+    padding-left: 4vw;
+}
+
+#endScore{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    height: 20vh;
+    font-size:20vh;
+}
+
+#playAgain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    width: 10vw;
+    height: 10vh;
+    font-size: 5vh;
+    
+}
+
+#playAgainButtons{
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    height: 10vw; 
+}
+
+#gameEndMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    position: absolute;
+    font-size: 5vh;
+    margin-top: 40vh;
+    
+}
+
+#question {
+    margin-top: 5vh;
+    width: 50vw;
+    height: 10vh;
+    font-size: 10vh;
+}
+
 
 #action {
-    display:none;
+    display: none;
     position: absolute;
     z-index: 999;
     margin: 12.5vh 12.5vw;
     width: 75vw;
     height: 75vh;
-    background-color: black;
-   
+    flex-direction: column;
+    align-items: center;
+    color: #FFF44F;
+    text-shadow: -1px 1px 0 #000;
 
+}
+
+#action img {
+    width: 20vw;
+}
+
+#actionLabels {
+    width: 80vw;
+    height: 30%;
+    font-size: 10vh;
+    display: flex;
+    justify-content: space-between;
+    font-size:10vh;
     
     
+
+}
+
+#playerChoiceLabel {
+    padding-left: 3vw;
+}
+
+#playerChoiceImages {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75vw;
+    height: 30vh;
 }
 
 #game {
@@ -27,8 +138,6 @@
     align-items: center;
     justify-content: space-between;
     height: 70vh;
-    font-family:'Staatliches', cursive;
-
 }
 
 .top {
@@ -65,9 +174,11 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-    height: 100%;
+    width: 50vw;
     font-size: 5vh;
+    position:absolute;
+    margin-top: 20vh;
+
     
 }
 
